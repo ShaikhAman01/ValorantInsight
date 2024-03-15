@@ -68,87 +68,8 @@ app.post('/', async (req, res) => {
   }
 });
 
-
-// app.post('/', async (req, res) => {
-//   try {
-//     const response = await axios.get('https://valorant-api.com/v1/agents?isPlayableCharacter=true');
-//     const agentsData = response.data.data;
-
-//     if (!agentsData) {
-//       console.error('Invalid data structure in the API response');
-//       res.status(500).send('that this Internal Server Error');
-//       return;
-//     }
-    
-//     // agents=agentsData.sort((a,b)=> a.displayName.localeCompare(b.displayName));
-//     const selectedRole = req.body.role;
-    
-    
-//     // Filter agents based on the selected role
-//     const filteredAgents = agentsData.filter(agent => if(agent.role.displayName === selectedRole){
-//       res.render('index', { data: filteredAgents, error: null });
-//     };
-//     else{
-//       let agents=agentsData.sort((a,b)=> a.displayName.localeCompare(b.displayName));
-
-//     })
-    
-//   } catch (error) {
-//     console.error('Error fetching data:', error.message);
-//     res.status(500).send('that that Internal Server Error');
-//   }
-// });
-
-
-// app.get('/', async (req, res) => {
-//   try {
-//     const response = await axios.get('https://valorant-api.com/v1/agents?isPlayableCharacter=true');
-//     let agentsData = response.data.data;
-
-//     if (!agentsData) {
-//       console.error('Invalid data structure in the API response');
-//       res.status(500).send('Internal Server Error');
-//       return;
-//     }
-//    agentsData=agentsData.sort((a,b)=> a.displayName.localeCompare(b.displayName));
-//    const selectedRole=req.body.role;
-//    const filteredAgents = agentsData.filter(agent => agent.role.displayName === selectedRole);
-  
-
-//     res.render('index', { agents: agentsData, data:filteredAgents,  error: null });
-//   } catch (error) {
-//     console.error('Error fetching data:', error.message);
-//     res.status(500).send('server error nhi h ');
-//   }
-// });
-
-// app.post("/", async (req, res) => {
-//   try {
-//     console.log(req.body);
-//     const roles = req.body.role;
-//     const response = await axios.get(
-//       `https://valorant-api.com/v1/agents?isPlayableCharacter=true`
-//     );
-//     let result = response.data.data.role.displayName;
-//     if (roles === Duelist) {
-//       return result;
-//     }
-//     console.log(result);
-//     res.render("index.ejs", {agents:result});
-//   } catch (error) {
-//     console.error("Failed to make request:", error.message);
-//     res.render("index.ejs", {
-//       error: "No activities that match your criteria.",
-//     });
-//   }
-// });
-
-
-
-
-
 app.listen(port,()=>{
-    console.log(`Server is running on port ${port}`);
+    console.log(`http://localhost:${port}`);
 })
 
 
